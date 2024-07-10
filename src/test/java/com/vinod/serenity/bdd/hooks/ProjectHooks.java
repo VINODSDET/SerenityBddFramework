@@ -7,27 +7,26 @@ import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.environment.SystemEnvironmentVariables;
 import net.thucydides.core.util.EnvironmentVariables;
-import net.thucydides.core.webdriver.WebdriverManager;
 import org.junit.Before;
 
 import java.io.IOException;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class projectHooks {
+public class ProjectHooks {
     
     @Steps
     
-    static Logger logger = LogManager.getLogManager().getLogger(projectHooks.class.getName());
+    static Logger logger = LogManager.getLogManager().getLogger(ProjectHooks.class.getName());
     EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
     String browser = EnvironmentSpecificConfiguration.from(variables).getProperty("webdriver.driver");
 
-    public projectHooks() throws IOException{}
+    public ProjectHooks() throws IOException{}
     
     @Before
     public void settingUpWebDriver(){
         logger.info("Setting Up WebDriver(): Start");
-        logger.info("webdriver.driver value is : " + browser);
+        logger.info("webdriver4.1.20.driver value is : " + browser);
         logger.info("driver.windows.webdriver.gecko.driver : " + variables.getProperty("driver.windows.gecko.driver"));
         
         if (browser.equals("firefox")){
