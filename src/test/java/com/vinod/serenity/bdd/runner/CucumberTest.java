@@ -6,7 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        plugin = {"pretty"},
+        plugin = {"pretty",
+        "json:target/cucumber-report/cucumber.json",
+        "junit:target/cucumber-report/cucumber.xml",
+         "html:target/cucumber-report/cucumber.html",
+         "html:target/cucumber/cucumber-report/report.xml"
+        },
         features = "classpath:features",
         glue = {"com.vinod.serenity.bdd.stepdefs"},
 //        monochrome = true,
