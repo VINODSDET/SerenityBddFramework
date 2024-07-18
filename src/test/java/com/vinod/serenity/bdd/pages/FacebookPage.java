@@ -6,13 +6,20 @@ import org.openqa.selenium.support.FindBy;
 
 public class FacebookPage extends PageObject {
 
-    @FindBy(id = "email")
+    @FindBy(name = "username")
     public WebElementFacade emailAddress;
 
-    @FindBy(id = "pass")
+    @FindBy(name = "password")
     public WebElementFacade password;
 
-    @FindBy(name = "login")
+    @FindBy(xpath = "//button[contains(@class,'orangehrm-login-button')]")
     public WebElementFacade login;
+
+    @FindBy(xpath = "//div[@class='orangehrm-login-branding']")
+    public WebElementFacade orangeHRMLogo;
+
+    @FindBy(xpath = "//h6[normalize-space()='Dashboard']")
+    public WebElementFacade homePageOrangeHRMLogo;
+
 
 }
